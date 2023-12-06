@@ -1,5 +1,5 @@
-import { Sequelize } from "sequelize";
-import db from "../../config/Database";
+const Sequelize = require("sequelize");
+const db = require("../../config/Database");
 
 const { DataTypes } = Sequelize;
 
@@ -11,7 +11,7 @@ const Paket = db.define('pakets', {
     freezeTableName: true
 });
 
-export const User = db.define('users', {
+const User = db.define('users', {
     name: DataTypes.STRING,
     status: DataTypes.STRING,
     berat: DataTypes.INTEGER,
@@ -30,8 +30,8 @@ Paket.hasMany(User, {
     foreignKey: "paketId"
 })
 
-
-exports.module =  Paket;
+exports.module = User;
+exports.module = Paket;
 
 (async () => {
     await db.sync();

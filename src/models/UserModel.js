@@ -1,8 +1,8 @@
-const { Sequelize } = require("sequelize");
-const db = require("../config/Database.js");
+
+const db = require("../../config/Database.js");
 const Paket = require("./PaketModel.js");
 const { User } = require("./PaketModel.js");
-const { DataTypes } = Sequelize;
+
 
 // const User = db.define('users', {
 //     name: DataTypes.STRING,

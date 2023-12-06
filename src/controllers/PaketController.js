@@ -2,7 +2,7 @@
 // import Paket from "../models/PaketModel.js";
 const Paket = require('../models/PaketModel.js');
 
-export const getPakets = async (req, res) => {
+const getPakets = async (req, res) => {
     try {
         const response = await Paket.findAll();
         res.status(200).json(response);
@@ -10,7 +10,7 @@ export const getPakets = async (req, res) => {
         console.log(error.message);
     }
 }
-export const getPaketsById = async (req, res) => {
+const getPaketsById = async (req, res) => {
     try {
         const response = await Paket.findOne({
             where: {
@@ -21,5 +21,9 @@ export const getPaketsById = async (req, res) => {
     } catch (error) {
         console.log(error.message);
     }
+}
+
+exports.module = {
+    getPakets, getPaketsById
 }
 
