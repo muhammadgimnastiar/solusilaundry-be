@@ -3,7 +3,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
 
-require('dotenv').config();
+import dot from 'dotenv';
+dot.config();
 
 import middlewares from './middlewares.js';
 import api from './api/index.js';
