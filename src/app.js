@@ -1,4 +1,4 @@
-import express from 'express';
+import express, { Router } from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   });
 });
 
-app.use('/api/v1', api);
+app.use(Router);
 
 app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
